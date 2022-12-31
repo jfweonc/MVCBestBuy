@@ -40,3 +40,4 @@ C:\Users\freeb\Desktop\repos\ASPNET\Testing\obj\Debug\net6.0\refint\Testing.dll
 C:\Users\freeb\Desktop\repos\ASPNET\Testing\obj\Debug\net6.0\Testing.pdb
 C:\Users\freeb\Desktop\repos\ASPNET\Testing\obj\Debug\net6.0\Testing.genruntimeconfig.cache
 C:\Users\freeb\Desktop\repos\ASPNET\Testing\obj\Debug\net6.0\ref\Testing.dll
+C:\Users\freeb\Desktop\repos\ASPNET\Testing\bin\Debug\net6.0\appsettings.json

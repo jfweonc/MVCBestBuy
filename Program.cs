@@ -1,26 +1,28 @@
 using System;
-using System.Collections.Generic;
+
 using System.Data;
-using System.Linq;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MySql.Data.MySqlClient;
 using Testing;
-using Testing.Models;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+var connection = builder.Configuration.GetConnectionString("bestbuy");
+//var test = "Server=localhost;Database=bestbuy;uid=root;Pwd=password;Port=3306;"; 
 builder.Services.AddScoped<IDbConnection>((s) =>
 {
-    IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("bestbuy"));
+    IDbConnection conn = new MySqlConnection(connection);
     conn.Open();
     return conn;
-
 });
 
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
@@ -45,8 +47,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.Run();
-
 
 app.Run();
